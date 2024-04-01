@@ -22,6 +22,8 @@ class InsertionForm extends Component
         Item::create($validatedData);
 
         $this->reset('name', 'price', 'description');
+
+        session()->flash('success', 'sccessfully created!');
     }
 
     public function render()

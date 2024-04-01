@@ -2,6 +2,9 @@
     <h3 style="text-align: center;">Insert Data into Our Database</h1>
 
         <div class="input-form-main">
+            @if (session()->has('success'))
+                <p>{{session('success')}}</p>
+            @endif
 
             <div class="input-form">
                 <label for="name">Item Name</label>
