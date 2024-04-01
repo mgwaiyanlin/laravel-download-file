@@ -12,7 +12,22 @@ class ItemController extends Controller
     {
         $data = Item::get();
 
-        $pdf = Pdf::loadView('invoice', $data->toArray());
+        $itemData = [
+            'items' => $data,
+        ];
+
+        // $data->toArray();
+        // dd($data);
+        $pdf = Pdf::loadView('invoice', $itemData);
         return $pdf->download('invoice.pdf');
     }
+
+    public function view() {
+        $items = Item::all();
+
+        return view('invoice', [
+            'items' => $items
+        ]);
+    }
+
 }

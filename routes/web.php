@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('pdfview', array('as' => 'pdfview', 'uses' => 'ItemController@pdfview'));
 
 Route::get('generate-pdf', [ItemController::class, 'generatePDF']);
+Route::get('/invoice-view', [ItemController::class, 'view']);
 
 Route::get('/', function () {
     return view('welcome');
